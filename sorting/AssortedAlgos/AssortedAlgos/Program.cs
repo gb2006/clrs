@@ -8,7 +8,7 @@ namespace AssortedAlgos
         {
             int[] arr = GetTestArr();
 
-            new SelectionSort().Sort(arr);
+            new MergeSort().Sort(arr);
             Print(arr);
 
             new InsertionSort().Sort(arr);
