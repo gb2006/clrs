@@ -10,6 +10,9 @@ namespace AssortedAlgos
 
             new SelectionSort().Sort(arr);
             Print(arr);
+
+            new InsertionSort().Sort(arr);
+            Print(arr);
         }
 
         static int[] GetTestArr()
