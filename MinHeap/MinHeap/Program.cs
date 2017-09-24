@@ -27,6 +27,37 @@ namespace MinHeap
 
             Console.WriteLine();
         }
+
+        static int[] topK(int[] iStream, int iK)
+        {
+            MinHeap mh = new MinHeap(iK);
+
+            // Here we use length of array purely for iteration purpose, 
+            // Other than that, there's no dependency on length per se.
+            // 
+            for (int i = 0; i < iStream.Length; i++)
+            {
+                if (mh.IsFull())
+                {
+                    if (iStream[i] > mh.Min())
+                    {
+                        mh.UpdateMin(iStream[i]);
+                    }
+                }
+                else
+                {
+                    mh.Insert(iStream[i]);
+                }
+            }
+
+            int[] retArr = new int[iK <= iStream.Length ? iK : iStream.Length];
+            int idx = 0;
+            while (!mh.IsEmpty())
+            {
+                retArr[idx++] = mh.ExtractMin();
+            }
+            return retArr;
+        }
     }
 
     class MinHeap
