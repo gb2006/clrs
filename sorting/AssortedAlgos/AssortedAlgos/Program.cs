@@ -11,7 +11,7 @@ namespace AssortedAlgos
             new MergeSort().Sort(arr);
             Print(arr);
 
-            new InsertionSort().Sort(arr);
+            new MergeSort2().Sort(arr);
             Print(arr);
         }
 
